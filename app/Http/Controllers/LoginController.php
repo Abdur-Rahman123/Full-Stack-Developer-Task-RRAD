@@ -15,6 +15,8 @@ class LoginController extends Controller
 
         if (count((array)$user) > 0) {
             return view('Success');
+        }else{
+            return redirect('/');
         }
     }
 }

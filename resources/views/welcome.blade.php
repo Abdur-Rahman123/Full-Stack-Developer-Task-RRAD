@@ -9,24 +9,7 @@
     <link href="{{asset('css/index.css')}}" rel="stylesheet" />
     <title>Document</title>
     <style>
-        body{
-           background-color: #4055b2
-        }
-        #first{
-            background-color: #18266a;
-           
-        }
-        #second{
-            background-color:#ffffff;
-        }
-        #signUp{
-            padding: 10px 20px;
-             font-size: 20px;
-              border-radius: 10px;
-        }
-        input[type="checkbox"] {
-            display: inline-block;
-      }
+        
     </style>
 </head>
 <body>

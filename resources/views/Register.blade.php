@@ -8,27 +8,29 @@
     <title>Register</title>
 </head>
 <body>
-    
-    <form  action="{{url('/storeuser')}}" action="POST"> 
-        @csrf
-        <div class="container">
-          <h1>Register</h1>
-          <p>Please fill in this form to create an account.</p>
-          <hr>
-          
-          
-          <label for="psw-repeat"><b>Name</b></label>
-          <input type="text" placeholder="Enter Name" name="name" id="name" required>
+  <form method="post" enctype="multipart/form-data" action="{{route('store')}}">
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="email" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" id="password" required>
-          
-          <hr>
-          <button type="submit" class="registerbtn">Register</button>
-        </div>
-      </form> 
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
+    <fieldset>
+    <table class="center">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="iname"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="iemail"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="ipassword"></td>
+    </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="Register"></td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
 </body>
 </html>

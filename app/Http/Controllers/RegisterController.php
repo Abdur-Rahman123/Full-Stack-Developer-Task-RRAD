@@ -9,17 +9,16 @@ class RegisterController extends Controller
     public function getRegister(){
         return view('Register');
     }
-   public function storeUser(Request $request){
-    $this->validate(request(), [
-        'name' => 'required',
-        'email' => 'required|email',
-        'password' => 'required'
-    ]);
-    
-    $user = Register::create(request(['name', 'email', 'password']));
-    
-    //auth()->login($user);
-    
-    return redirect()->to('/');
+   public function storeUser(Request $req){
+    $user = new Register();
+    $user->name     = $req->iname;
+    $user->email   = $req->iemail;
+    $user->password   = $req->ipassword;
+
+    if($user->save()){
+        return redirect('/');
+    }else{
+        return back();
+    }
     }
 }

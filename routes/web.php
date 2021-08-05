@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/register',[RegisterController::class,'getRegister']);
 
-Route::get('/storeuser',[RegisterController::class,'storeUser'])->name('store');
+Route::post('/storeuser',[RegisterController::class,'storeUser'])->name('store');
 
 Route::post('/checklogin',[LoginController::class,'verify'])->name('login');
 
